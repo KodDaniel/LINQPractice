@@ -24,9 +24,9 @@ namespace LinqStudiekollen
 
 
             modelBuilder.Entity<Test>()
-                .HasRequired(c => c.User)
-                .WithMany(a => a.Test)
-                .HasForeignKey(c => c.UserId);
+                .HasRequired(c => c.User);
+                //.WithMany(a => a.Test)
+                //.HasForeignKey(c => c.UserId);
 
             modelBuilder.Entity<Question>()
                 .HasRequired(c => c.Test)

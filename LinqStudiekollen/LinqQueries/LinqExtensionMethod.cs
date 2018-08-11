@@ -120,8 +120,84 @@ namespace LinqStudiekollen.LinqQueries
 
         public static void LinqExtensionGrouping(StudieContext context)
         {
+            // Grupperar alla frågor utefter vilket test de tillhör.
+            // TestId är min nyckel/key och den kriterie utifrån jag delar in grupperna.
+            var testGroups = context.Questions.GroupBy(c => c.TestId);
+
+            foreach (var group in testGroups)
+            {
+                Console.WriteLine("Key:" + group.Key);
+
+                foreach (var question in group)
+                {
+                    Console.WriteLine("\t" + question.Query);
+                }
+            }
+            Console.ReadLine();
+        }
+
+        public static void LinqExtensionJoining(StudieContext context)
+        {
+            // Vi förutsätter att vi inte har någon Navigation Property för Test i klassen User och gör därför en INNER JOIN.
+
+            var query = context.Tests.Join(context.Users,
+                 c => c.UserId,
+                 a => a.Id,
+                 (test, user) => new
+                 {
+                     Provnamn = test.Name,
+                     Användare = user.Epost
+                 });
+
+            foreach (var x in query)
+            {
+                Console.WriteLine("Användare: {0} har skapat detta prov: {1}.", x.Användare, x.Provnamn);
+            }
+            Console.WriteLine("-------------------------------------------------------------------------");
+            Console.ReadLine();
+
+            // Vi kör en Group Join för att få exakt samma resultat som när vi Group joinade med LINQ Syntax. Det innebär att vi vill ha följande resultat:
+            // Vi vill räkna antalet frågor för varje test med hjälp av en Group Join.
+
+            var query1 = context.Tests.
+                 GroupJoin(context.Questions,
+                 a => a.Id,
+                 c => c.TestId,
+                 (test, questions) => new
+                 {
+                     Testnamn = test.Name,
+                     AntalFrågor = questions.Count()
+                 });
+
+            foreach (var x in query1.OrderByDescending(x => x.AntalFrågor))
+            {
+                Console.WriteLine("{0} ({1})", x.Testnamn, x.AntalFrågor);
+
+            }
+            Console.ReadLine();
+
+            // Cross Join mellan Test och User
+
+            var query2 = context.Users.
+                SelectMany(a => context.Tests,
+                (user, test) => new
+                {
+                    Användarnamn = user.Epost,
+                    Provnamn = test.Name
+                });
+
+            foreach (var x in query2)
+            {
+                Console.WriteLine(x.Användarnamn + " " + x.Provnamn);
+            }
+            Console.ReadLine();
 
         }
+
+
+
+
+
 
     }
 }

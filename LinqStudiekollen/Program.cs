@@ -35,7 +35,11 @@ namespace LinqStudiekollen
 
             //LinqExtensionMethod.LinqExtensionDistinct(context);
 
-            LinqExtensionMethod.LinqExtensionGrouping(context);
+            //LinqExtensionMethod.LinqExtensionGrouping(context);
+
+            //LinqExtensionMethod.LinqExtensionJoining(context);
+
+
            
 
         }

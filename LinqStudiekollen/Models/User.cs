@@ -10,7 +10,7 @@ namespace LinqStudiekollen
     {
         public int Id { get; set; }
         public string Epost { get; set; }
-
-        public ICollection<Test> Test { get; set; }
+        
+        //public ICollection<Test> Test { get; set; }
     }
 }

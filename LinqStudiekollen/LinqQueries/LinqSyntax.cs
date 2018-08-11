@@ -113,21 +113,21 @@ namespace LinqStudiekollen
 
                 foreach (var test in group)
                 {
-                    Console.WriteLine("\t{0}",test.Name);
+                    Console.WriteLine("\t{0}", test.Name);
                 }
 
             }
             Console.WriteLine("-----------------------------------------------------------------------------------------------");
             Console.ReadLine();
 
-            // Med hjälp av Count-metoden räknar jag ut HUR MÅNGA prov varje användare har.
+            // Med hjälp av Count-metoden (ligger i loopen nedan) räknar jag ut HUR MÅNGA prov varje användare har.
             var query1 =
                 from t in context.Tests
                 group t by t.UserId
                 into g
                 select g;
 
-            foreach (var group in query)
+            foreach (var group in query1)
             {
                 // Första argumentet (Key) kommer vara UserId. Det andra argumentet är antalet kurs INOM detta userId (denna användare).
                 Console.WriteLine("{0} ({1})",group.Key,group.Count());
@@ -150,7 +150,7 @@ namespace LinqStudiekollen
             Console.ReadLine();
             Console.WriteLine("-----------------------------------------------------------------------------------------------");
 
-            
+
             var query2 =
                 from c in context.Tests
                 join a in context.Users on c.UserId equals a.Id
@@ -163,7 +163,7 @@ namespace LinqStudiekollen
             Console.ReadLine();
             Console.WriteLine("-----------------------------------------------------------------------------------------------");
 
-            // Nedan vill räkna antalet frågor för varje test med hjälp av en Group Join.
+           // Nedan vill räkna antalet frågor för varje test med hjälp av en Group Join.
 
             var query3 =
                 from a in context.Tests
@@ -177,15 +177,15 @@ namespace LinqStudiekollen
             Console.ReadLine();
             Console.WriteLine("-----------------------------------------------------------------------------------------------");
 
-            // Kross Joinar alla Users med alla Tests
+            // Cross Joinar alla Users med alla Tests
             var query4 =
                 from a in context.Users
                 from c in context.Tests
-                select new {Användare = a.Epost, Prov = c.Name};
+                select new { Användare = a.Epost, Prov = c.Name };
 
             foreach (var x in query4)
             {
-                Console.WriteLine("{0} - {1}",x.Användare,x.Prov);
+                Console.WriteLine("{0} - {1}", x.Användare, x.Prov);
             }
             Console.ReadLine();
 
