@@ -27,9 +27,16 @@ namespace LinqStudiekollen
 
             //.....................................................................................................
 
+            //LinqExtensionMethod.LinqExtensionRestriction(context);
 
+            //LinqExtensionMethod.LinqExtensionOrdering(context);
 
-            //LinqExtensionMethod.LinqContains(context);
+            //LinqExtensionMethod.LinqExtensionProjection(context);
+
+            //LinqExtensionMethod.LinqExtensionDistinct(context);
+
+            LinqExtensionMethod.LinqExtensionGrouping(context);
+           
 
         }
       

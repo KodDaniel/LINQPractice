@@ -178,7 +178,6 @@ namespace LinqStudiekollen
             Console.WriteLine("-----------------------------------------------------------------------------------------------");
 
             // Kross Joinar alla Users med alla Tests
-
             var query4 =
                 from a in context.Users
                 from c in context.Tests
