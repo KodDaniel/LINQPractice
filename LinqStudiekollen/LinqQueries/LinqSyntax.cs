@@ -148,18 +148,47 @@ namespace LinqStudiekollen
                 Console.WriteLine("Användare: {0}. Prov {1}.", userTest.Användare, userTest.Testnamn);
             }
             Console.ReadLine();
+            Console.WriteLine("-----------------------------------------------------------------------------------------------");
 
+            
             var query2 =
                 from c in context.Tests
                 join a in context.Users on c.UserId equals a.Id
-                select new { Användare = a.Epost, Testnamn = c.Name};
+                select new { Användare = a.Epost, Testnamn = c.Name };
 
             foreach (var userTest in query2)
             {
                 Console.WriteLine("Användare: {0}. Prov {1}.", userTest.Användare, userTest.Testnamn);
             }
             Console.ReadLine();
+            Console.WriteLine("-----------------------------------------------------------------------------------------------");
 
+            // Nedan vill räkna antalet frågor för varje test med hjälp av en Group Join.
+
+            var query3 =
+                from a in context.Tests
+                join c in context.Questions on a.Id equals c.TestId into g
+                select new { Testnamn = a.Name, Frågor = g.Count() };
+
+            foreach (var x in query3)
+            {
+                Console.WriteLine("{0} ({1})", x.Testnamn, x.Frågor);
+            }
+            Console.ReadLine();
+            Console.WriteLine("-----------------------------------------------------------------------------------------------");
+
+            // Kross Joinar alla Users med alla Tests
+
+            var query4 =
+                from a in context.Users
+                from c in context.Tests
+                select new {Användare = a.Epost, Prov = c.Name};
+
+            foreach (var x in query4)
+            {
+                Console.WriteLine("{0} - {1}",x.Användare,x.Prov);
+            }
+            Console.ReadLine();
 
         }
 

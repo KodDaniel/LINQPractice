@@ -23,9 +23,9 @@ namespace LinqStudiekollen
 
             //LinqSyntax.LinqGrouping(context);
 
-            LinqSyntax.LinqJoining(context);
+            //LinqSyntax.LinqJoining(context);
 
-
+            //.....................................................................................................
 
 
 
