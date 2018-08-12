@@ -39,8 +39,20 @@ namespace LinqStudiekollen
 
             //LinqExtensionMethod.LinqExtensionJoining(context);
 
+            //LinqExtensionMethod.LinqExtensionFirstAndLastOperator(context);
 
-           
+            //LinqExtensionMethod.LinqExtensionSingleAndAllOperator(context);
+
+            //LinqExtensionMethod.LinqExtensionAggregating(context);
+
+            //LinqExtensionMethod.LinqExtensionMethodPartitioning(context);
+
+            //.....................................................................................................
+            DeferredExecution.firstMethod(context);
+
+
+
+
 
         }
       

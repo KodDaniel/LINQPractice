@@ -194,8 +194,117 @@ namespace LinqStudiekollen.LinqQueries
 
         }
 
+        public static void LinqExtensionFirstAndLastOperator(StudieContext context)
+        {
 
 
+            //// First-operatorn
+
+            // First-operatorn utgår per default från den första propertyn, i det här fallet UserId. Se nästa kodexempel för hur du gör om du vill sortera utefter en annan property.
+            var firstUser = context.Users.First();
+            Console.WriteLine("Ge mig den första Usern i User-tabellen:");
+            Console.WriteLine(firstUser.Epost);
+            Console.WriteLine("-------------------------------------------------------------------------");
+            Console.ReadLine();
+
+            Console.WriteLine("Ge mig den första Usern i User-tabellen men sortera efter Epost istället för UserId(default-värdet):");
+            var firstUserButByEpost = context.Users.OrderBy(c => c.Epost).First();
+            Console.WriteLine(firstUserButByEpost.Epost);
+            Console.WriteLine("-------------------------------------------------------------------------");
+            Console.ReadLine();
+
+            //FirstOrDefault: With the "First-method", if the User-table is empty, you are going to get an exception when you call the FirstMethod. 
+            //  So we can use the "FirstOrDefault-method" and instead I am goinig to get NULL back.
+            var firstorDefault = context.Users.OrderBy(c => c.Epost).FirstOrDefault();
+            Console.WriteLine("Ge mig den första Usern i User-tabellen men sortera efter Epost istället för UserId(default-värdet). Om ingen resultat finns - returnera NULL:");
+            Console.WriteLine(firstUserButByEpost.Epost);
+            Console.WriteLine("-------------------------------------------------------------------------");
+            Console.ReadLine();
+
+            // Vi kan också placera conditions (predicate) isåväl First-operatorn som FirstOrDefault-operatorn.
+            var firstorDefaultWithCondition = context.Users.FirstOrDefault(c=>c.Id >2);
+            Console.WriteLine("Ge mig den första Usern som har ett UserId som överstiger 2. Om det inte finns någon sån User returnera NULL:");
+            Console.WriteLine(firstorDefaultWithCondition.Epost);
+            Console.WriteLine("-------------------------------------------------------------------------");
+            Console.ReadLine();
+
+            //// Last-Operator
+            //var lastUser = context.Users.Last();
+            //Console.WriteLine("Ge mig den sista Usern i User-tabellen:");
+            //Console.WriteLine(lastUser.Epost);
+            //Console.WriteLine("-------------------------------------------------------------------------");
+            //Console.ReadLine();
+
+            // Ersättningskod för Last-operatorn när nyckeln är ORDERBYDescending
+            var lastUserReplaceCode = context.Users.OrderByDescending(c=>c.Id).First();
+            Console.WriteLine("Ge mig den sista Usern i User-tabellen:");
+            Console.WriteLine(lastUserReplaceCode.Epost);
+            Console.WriteLine("-------------------------------------------------------------------------");
+            Console.ReadLine();
+
+
+
+        }
+
+        public static void LinqExtensionSingleAndAllOperator(StudieContext context)
+        {
+            //// "Single" Returns the only element of a sequence, and throws an exception if there is not exactly one element in the sequence.
+            //var testWithId3 = context.Tests.Single(c => c.UserId == 1);
+            //Console.WriteLine(testWithId3.Name);
+            //Console.ReadLine();
+
+            ////"SingleOrDefault Returns the only element of a sequence, or a default value if the sequence is empty;...
+            //// this method throws an exception if there is more than one element in the sequence.            
+            //var testWithId3Default = context.Tests.SingleOrDefault(c => c.Id == 23);
+            //Console.WriteLine(testWithId3Default.Name);
+            //Console.ReadLine();
+
+            //All Operator
+            // The All-operator can be used to check if ALL objects match a specified condition/critera
+            // Returns a Booleen
+            
+            // Undersöker fölhande: Har ALLA TEST ett TestId som ej överstiger 2?
+            var all = context.Tests.All(c => c.Id > 2);
+            Console.WriteLine("Har ALLA TEST ett TestId högre än 2? {0}.", all);
+            Console.ReadLine();
+
+            // Undersöker om det finns NÅGOT TEST som har ett högre TestId än 2.
+            // Returns a Boolean.
+            var any= context.Tests.Any(c => c.Id > 2);
+            Console.WriteLine("Har NÅGOT TEST ett TestId högre än 2? {0}.", any);
+            Console.ReadLine();
+
+
+        }
+
+        public static void LinqExtensionAggregating(StudieContext context)
+        {
+            // Räkna antalet frågor i databasen där resultatet (result-kolumnen) ej är null.
+            var countNotNullQuestions = context.Questions.Count(c=>c.Result !=null);
+            Console.WriteLine("Det totala antalet frågor i databasen som ej har NULL i resultat-kolumnen är: {0}.", countNotNullQuestions);
+            Console.ReadLine();
+
+            // Max, Min, Average
+            var max = context.Questions.Max(c => c.TestId);
+            var min = context.Questions.Min(c => c.TestId);
+            var average =context.Questions.Average(c => c.TestId);
+
+            Console.WriteLine("Det högsta TestId som existerar i Question-tabellen är {0}.",max);
+            Console.WriteLine("Det minsta TestId som existerar i Question-tabellen är {0}.", min);
+            Console.WriteLine("Medelvärdet för alla TestID:n i Question-tabellen är {0}.", average);
+            Console.ReadLine();
+
+
+
+        }
+
+
+        public static void LinqExtensionMethodPartitioning(StudieContext context)
+        {
+            //Partitioning
+            var tests = context.Tests.Skip(10).Take(10);
+
+        }
 
 
 

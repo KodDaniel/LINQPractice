@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeferredExecution.cs" />
     <Compile Include="LinqQueries\LinqExtensionMethod.cs" />
     <Compile Include="LinqQueries\LinqSyntax.cs" />
     <Compile Include="Migrations\201808101326512_firstmig.cs" />

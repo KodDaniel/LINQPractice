@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace LinqStudiekollen
 {
-    public class User
+    class DeferredExecution
     {
-        public int Id { get; set; }
-        public string Epost { get; set; }
-        public ICollection<Test> Test { get; set; }
+
+        public static void firstMethod(StudieContext context)
+        {
+
+        }
+
+
     }
 }
