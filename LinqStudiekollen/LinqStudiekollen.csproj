@@ -49,10 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeferredExecution.cs" />
-    <Compile Include="IQueryable.cs" />
+    <Compile Include="LinqQueries\DeferredExecution.cs" />
+    <Compile Include="LinqQueries\IQueryable.cs" />
     <Compile Include="LinqQueries\LinqExtensionMethod.cs" />
     <Compile Include="LinqQueries\LinqSyntax.cs" />
+    <Compile Include="LoadingRelatedObjects\LazyLoading.cs" />
     <Compile Include="Migrations\201808101326512_firstmig.cs" />
     <Compile Include="Migrations\201808101326512_firstmig.Designer.cs">
       <DependentUpon>201808101326512_firstmig.cs</DependentUpon>
@@ -95,5 +96,6 @@
       <DependentUpon>201808101354073_DummyQuestions1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

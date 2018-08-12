@@ -10,6 +10,8 @@ namespace LinqStudiekollen
     {
         public int Id { get; set; }
         public string Epost { get; set; }
-        public ICollection<Test> Test { get; set; }
+
+        // virtual borrtaget för att undvika Lazy loading
+        public  ICollection<Test> Test { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace LinqStudiekollen
             // LINQ Queries below
             var context = new StudieContext();
 
+
             //LinqSyntax.LinqRestriction(context);
 
             //LinqSyntax.LinqOrdering(context);
@@ -50,6 +51,8 @@ namespace LinqStudiekollen
             //.....................................................................................................
             //DeferredExecution.DeferredMethod(context);
             //.....................................................................................................
+
+            LazyLoading.LazyLoadingMethod(context);
 
 
 

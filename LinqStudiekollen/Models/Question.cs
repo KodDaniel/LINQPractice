@@ -12,7 +12,8 @@ namespace LinqStudiekollen
         public string Query { get; set; }
         public string Answer { get; set; }
         public string Result { get; set; }
-        public virtual Test Test { get; set; }
+        // virtual borrtaget för att undvika Lazy loading
+        public Test Test { get; set; }
         public int TestId { get; set; }
     }
 }
