@@ -48,14 +48,18 @@ namespace LinqStudiekollen
             //LinqExtensionMethod.LinqExtensionMethodPartitioning(context);
 
             //.....................................................................................................
-            DeferredExecution.firstMethod(context);
+            //DeferredExecution.DeferredMethod(context);
+            //.....................................................................................................
+
+
+
 
 
 
 
 
         }
-      
+
 
 
 
