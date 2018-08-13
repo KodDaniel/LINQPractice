@@ -54,8 +54,15 @@ namespace LinqStudiekollen
 
             //Loading.LazyLoadingMethod(context);
 
-            Loading.NPlus1Problem(context);
+            //Loading.NPlus1Problem(context);
 
+            //Loading.EagerLoading(context);
+
+            //Loading.ExplicitLoading(context);
+
+            //.....................................................................................................
+             
+            AddUpdateDeleteData.AddData(context);
 
 
 

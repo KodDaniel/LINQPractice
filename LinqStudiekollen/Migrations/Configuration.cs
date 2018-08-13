@@ -142,39 +142,44 @@ namespace LinqStudiekollen.Migrations
             //    new Question
             //    {
 
-            //        Query= "Hur avbeställer jag min konseret",
-            //        Answer = "Det går ej med så kort varsel.",
+            //        Query= "Vad heter Tysklands huvudstad?",
+            //        Answer = "Berlin.",
+            //        Result = "Rätt!",
             //        TestId = 7
 
             //    },
             //    new Question
             //    {
-            //        Query= "Var svaret funktionellt?",
-            //        Answer = "Definiera funktionellt",
+            //        Query= "Är en häst också en Zebra?",
+            //        Answer = "Ja, det är samma djur.",
+            //        Result = "Fel!",
             //        TestId = 5
             //    },
             //    new Question
             //    {
-            //        Query= "Hur får jag ett nytt?",
-            //        Answer = "Ett nytt vadå?.",
+            //        Query= "Vad är en kanot?",
+            //        Answer = "Ett slags fartyg.",
+            //        Result = "Fel!",
             //        TestId = 5
             //    },
             //    new Question
             //    {
-            //        Query= " Vill du inte ha några mejl?",
-            //        Answer = "Nej",
+            //        Query= " Vill du ha en telefon?",
+            //        Answer = "Hels inte",
+            //        Result = "Fel!",
             //        TestId = 8
             //    },
             //    new Question
             //    {
-            //        Query= "Uppsala Kommun?",
-            //        Answer = "Sådär.",
+            //        Query= "Vad är en fisk?",
+            //        Answer = "Ett däggjur.",
+            //          Result = "Rätt",
             //        TestId = 3
             //    }
 
 
 
-            //};
+            //    };
 
             //foreach (var question in questions)
             //    context.Questions.AddOrUpdate(a => a.Query, question);

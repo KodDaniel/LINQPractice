@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LinqQueries\AddUpdateDeleteData.cs" />
     <Compile Include="LinqQueries\DeferredExecution.cs" />
     <Compile Include="LinqQueries\IQueryable.cs" />
     <Compile Include="LinqQueries\LinqExtensionMethod.cs" />
