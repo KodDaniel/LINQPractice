@@ -16,7 +16,7 @@ namespace LinqStudiekollen
         public ICollection<Question> Question { get; set; }
         public int UserId { get; set; }
         // virtual borrtaget för att undvika Lazy loading
-        public User User { get; set; }
+        public virtual User User { get; set; }
     }
 }
 

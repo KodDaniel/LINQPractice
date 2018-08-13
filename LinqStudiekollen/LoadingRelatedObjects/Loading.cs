@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinqStudiekollen
 {
-    class LazyLoading
+    class Loading
     {
 
         public static void LazyLoadingMethod(StudieContext context)
@@ -19,6 +19,22 @@ namespace LinqStudiekollen
                 Console.WriteLine(test.Name);
             }
             Console.ReadLine();
+        }
+
+        public static void NPlus1Problem(StudieContext context)
+        {
+            var tests = context.Tests.ToList();
+
+            foreach (var test in tests)
+            {
+                Console.WriteLine(test.Name + " " + test.User.Epost);
+            }
+            Console.ReadLine();
+        }
+
+        private static void EagerLoading (StudieContext context)
+        {
+
         }
     }
 }

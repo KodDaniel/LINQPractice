@@ -53,7 +53,7 @@
     <Compile Include="LinqQueries\IQueryable.cs" />
     <Compile Include="LinqQueries\LinqExtensionMethod.cs" />
     <Compile Include="LinqQueries\LinqSyntax.cs" />
-    <Compile Include="LoadingRelatedObjects\LazyLoading.cs" />
+    <Compile Include="LoadingRelatedObjects\Loading.cs" />
     <Compile Include="Migrations\201808101326512_firstmig.cs" />
     <Compile Include="Migrations\201808101326512_firstmig.Designer.cs">
       <DependentUpon>201808101326512_firstmig.cs</DependentUpon>

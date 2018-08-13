@@ -52,7 +52,11 @@ namespace LinqStudiekollen
             //DeferredExecution.DeferredMethod(context);
             //.....................................................................................................
 
-            LazyLoading.LazyLoadingMethod(context);
+            //Loading.LazyLoadingMethod(context);
+
+            Loading.NPlus1Problem(context);
+
+
 
 
 

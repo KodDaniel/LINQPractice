@@ -16,8 +16,8 @@ namespace LinqStudiekollen
         public StudieContext()
             : base("Name=DefaultConnection")
         {
-            //Disablar Lazy Loading
-            this.Configuration.LazyLoadingEnabled = false;
+            ////Disablar Lazy Loading
+            //this.Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
