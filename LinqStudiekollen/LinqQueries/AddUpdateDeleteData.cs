@@ -37,5 +37,18 @@ namespace LinqStudiekollen.LinqQueries
             context.Tests.Add(test);
             context.SaveChanges();
         }
+
+        public static void UpdateData(StudieContext context)
+        {
+           // Vi hämtar användaren med primärnyckeln "4"...
+           //...med hjälp av "Find-metoden" och lagrar resultatet i variabeln "user.
+            var user = context.Users.Find(4); // Instead of: Single(c=c.Id == 4).
+
+            // Uppdaterar med nya värdet "Linda@gmail.com
+            user.Epost = "Linda@gmail.com";
+
+            context.SaveChanges();
+
+        }
     }
 }
