@@ -62,7 +62,8 @@ namespace LinqStudiekollen
 
             //.....................................................................................................
              
-            AddUpdateDeleteData.AddData(context);
+            AddUpdateDeleteData.AddDataMvcApproach(context);
+            AddUpdateDeleteData.AddDataWpfApproach(context);
 
 
 
