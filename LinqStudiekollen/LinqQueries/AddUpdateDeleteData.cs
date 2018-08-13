@@ -50,5 +50,16 @@ namespace LinqStudiekollen.LinqQueries
             context.SaveChanges();
 
         }
+
+        public static void DeleteDataWithCascade(StudieContext context)
+        {
+
+        }
+
+        public static void DeleteDataNotCascade(StudieContext context)
+        {
+
+        }
+
     }
 }
