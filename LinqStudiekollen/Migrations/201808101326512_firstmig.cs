@@ -18,7 +18,7 @@ namespace LinqStudiekollen.Migrations
                         TestId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Tests", t => t.TestId, cascadeDelete: true)
+                .ForeignKey("dbo.Tests", t => t.TestId, cascadeDelete: false)
                 .Index(t => t.TestId);
             
             CreateTable(
@@ -32,7 +32,7 @@ namespace LinqStudiekollen.Migrations
                         UserId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.UserId);
             
             CreateTable(

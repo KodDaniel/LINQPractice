@@ -61,16 +61,18 @@ namespace LinqStudiekollen
             //Loading.ExplicitLoading(context);
 
             //.....................................................................................................
-             
+
             //AddUpdateDeleteData.AddDataMvcApproach(context);
-           
+
             //AddUpdateDeleteData.AddDataWpfApproach(context);
-            
+
             //AddUpdateDeleteData.UpdateData(context);
 
-            AddUpdateDeleteData.DeleteDataNotCascade(context);
+            //AddUpdateDeleteData.DeleteDataNotCascade(context);
 
-            AddUpdateDeleteData.DeleteDataWithCascade(context);
+            //AddUpdateDeleteData.DeleteDataWithCascade(context);
+
+            AddUpdateDeleteData.ChangeTracker(context);
 
 
 

@@ -71,6 +71,18 @@
     <Compile Include="Migrations\201808101354073_DummyQuestions1.Designer.cs">
       <DependentUpon>201808101354073_DummyQuestions1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808140715401_e.cs" />
+    <Compile Include="Migrations\201808140715401_e.Designer.cs">
+      <DependentUpon>201808140715401_e.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808140734158_ssd.cs" />
+    <Compile Include="Migrations\201808140734158_ssd.Designer.cs">
+      <DependentUpon>201808140734158_ssd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808140756146_ssds.cs" />
+    <Compile Include="Migrations\201808140756146_ssds.Designer.cs">
+      <DependentUpon>201808140756146_ssds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +107,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808101354073_DummyQuestions1.resx">
       <DependentUpon>201808101354073_DummyQuestions1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808140715401_e.resx">
+      <DependentUpon>201808140715401_e.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808140734158_ssd.resx">
+      <DependentUpon>201808140734158_ssd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808140756146_ssds.resx">
+      <DependentUpon>201808140756146_ssds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

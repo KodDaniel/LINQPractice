@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,10 +55,32 @@ namespace LinqStudiekollen.LinqQueries
 
         public static void DeleteDataWithCascade(StudieContext context)
         {
+            // Obs detta sätt förutsätter att User-Och Test- har ändrats till WillCascadeDelete = False i Dbcontext Fluent-API.
+            var user = context.Users.Find(2); 
+            context.Users.Remove(user);
 
+            context.SaveChanges();
         }
 
         public static void DeleteDataNotCascade(StudieContext context)
+        {
+            //  If we have CascadeDelete OFF we have to explicitly delete tests first and after that the user. 
+            
+            // Eager Loading User with UserId 8 AND his tests
+            var user = context.Users.Include(a => a.Test).Single(a => a.Id == 2);
+
+            // Tar bort de test vi Eager Loadat
+            context.Tests.RemoveRange(user.Test);
+           
+            // Tar bort Usern.
+            context.Users.Remove(user);
+
+            context.SaveChanges();
+
+
+        }
+
+        public static void ChangeTracker(StudieContext context)
         {
 
         }
