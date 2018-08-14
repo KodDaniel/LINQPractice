@@ -72,7 +72,7 @@ namespace LinqStudiekollen
 
             //AddUpdateDeleteData.DeleteDataWithCascade(context);
 
-            AddUpdateDeleteData.ChangeTracker(context);
+            //AddUpdateDeleteData.ChangeTracker(context);
 
 
 

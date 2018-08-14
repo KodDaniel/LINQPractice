@@ -82,6 +82,24 @@ namespace LinqStudiekollen.LinqQueries
 
         public static void ChangeTracker(StudieContext context)
         {
+            // add an object
+            context.Users.Add(new User{ Id = 11, Epost = "Horace@gmail.com"});
+
+            // update an object
+            var user = context.Users.Find(6);
+            user.Epost = "Adam@glocalnet.net";
+
+            // delete an object
+            var another = context.Users.Find(6);
+            context.Users.Remove(another);
+
+           var entries = context.ChangeTracker.Entries();
+
+            foreach (var entry in entries)
+            {
+                Console.WriteLine(entry.State);
+            }
+            Console.ReadLine();
 
         }
 
