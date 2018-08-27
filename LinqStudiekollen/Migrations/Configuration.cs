@@ -49,91 +49,91 @@ namespace LinqStudiekollen.Migrations
             #endregion
 
             #region AddingTests
-            //var tests = new List<Test>
-            //{
-            //    new Test
-            //    {
+            var tests = new List<Test>
+            {
+                new Test
+                {
+                    
+                    Name = "Svenska",
+                    UserId = 1
+                },
+                new Test
+                {
+                    Name = "Engelska",
+                    UserId = 1
+                },
+                new Test
+                {
+                    Name = "Matte",
+                    UserId = 1
+                },
+                new Test
+                {
+                    Name = "Naturvetenskap",
+                    UserId = 2
+                },
+                new Test
+                {
+                    Name = "Kemi",
+                    UserId = 2
 
-            //        Name = "Svenska",
-            //        UserId = 1
-            //    },
-            //    new Test
-            //    {
-            //        Name = "Engelska",
-            //        UserId = 1
-            //    },
-            //    new Test
-            //    {
-            //        Name = "Matte",
-            //        UserId = 1
-            //    },
-            //    new Test
-            //    {
-            //        Name = "Naturvetenskap",
-            //        UserId = 2
-            //    },
-            //    new Test
-            //    {
-            //        Name = "Kemi",
-            //        UserId = 2
+                },
+                new Test
+                {
+                    Name = "Ondska",
+                    UserId = 1
 
-            //    },
-            //    new Test
-            //    {
-            //        Name = "Ondska",
-            //        UserId = 1
+                },
 
-            //    },
+                new Test
+                {
+                    Name = "Smärta",
+                    UserId = 1
 
-            //    new Test
-            //    {
-            //        Name = "Smärta",
-            //        UserId = 1
+                },
 
-            //    },
+                new Test
+                {
+                    Name = "Kemi",
+                    UserId = 4
 
-            //    new Test
-            //    {
-            //        Name = "Kemi",
-            //        UserId = 4
+                },
+                new Test
+                {
+                    Name = "KostVetenskap",
+                    UserId = 4
 
-            //    },
-            //    new Test
-            //    {
-            //        Name = "KostVetenskap",
-            //        UserId = 4
+                },
 
-            //    },
+                new Test
+                {
+                    Name = "FågelVetenskap",
+                    UserId = 4
 
-            //    new Test
-            //    {
-            //        Name = "FågelVetenskap",
-            //        UserId = 4
+                },
+                new Test
+                {
+                    Name = "OrdVetenskap",
+                    UserId = 3
 
-            //    },
-            //    new Test
-            //    {
-            //        Name = "OrdVetenskap",
-            //        UserId = 3
+                },
+                new Test
+                {
+                    Name = "Atomtvenskap",
+                    UserId = 3
 
-            //    },
-            //    new Test
-            //    {
-            //        Name = "Atomtvenskap",
-            //        UserId = 3
+                },
+                new Test
+                {
+                    Name = "OOP3",
+                    UserId = 5
 
-            //    },
-            //    new Test
-            //    {
-            //        Name = "OOP3",
-            //        UserId = 5
-
-            //    }
-            //}; 
+                }
+            };
 
 
-            //foreach (var test in tests)
-            //    context.Tests.AddOrUpdate(a => a.Name, test);
+            foreach (var test in tests)
+                context.Tests.AddOrUpdate(a => a.Id, test);
             #endregion
 
             #region AddingQuestions
